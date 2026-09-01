@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b0f14">
+<title>Reprojeto do Bowl do Pistão</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand"><div class="mark"></div><div><h1>Reprojeto do Bowl do Pistão</h1><div class="sub">Visualização 3D touch • execução local/offline</div></div></div>
+  <div class="mode"><button id="btnOriginal" class="active">Original</button><button id="btnProposed">Proposto</button><button id="btnCompare">Comparar</button></div>
+</header>
+<main>
+  <section id="stageSingle" class="stage active single">
+    <div class="viewerWrap"><canvas id="canvasMain"></canvas><div id="statusMain" class="status">Carregando modelo 3D…</div>
+      <div class="overlay"><span class="tag" id="tag">CONFIGURAÇÃO ORIGINAL</span><h2 id="title">Bowl raso e largo</h2><p id="description">Toque e arraste para girar. Pinça para zoom. Dois dedos movem a câmera.</p></div>
+      <div class="hint">Arraste • pinça • dois dedos</div>
+      <div id="info" class="info"><h3>Leitura rápida da geometria</h3><div class="grid"><div class="metric"><span>Tipo de bowl</span><b id="mBowl">Raso / largo</b></div><div class="metric"><span>Garganta</span><b id="mThroat">Aberta</b></div><div class="metric"><span>Squish</span><b id="mSquish">Convencional</b></div><div class="metric"><span>Transições</span><b id="mTransition">Suaves</b></div></div></div>
+    </div>
+  </section>
+
+  <section id="stageCompare" class="stage compare">
+    <div class="pane"><div class="viewerWrap"><canvas id="canvasA"></canvas><div id="statusA" class="status">Carregando…</div></div><div class="label"><b>Original</b><span>Bowl raso e largo</span></div></div>
+    <div class="pane"><div class="viewerWrap"><canvas id="canvasB"></canvas><div id="statusB" class="status">Carregando…</div></div><div class="label"><b>Proposto</b><span>Bowl re-entrante</span></div></div>
+  </section>
+</main>
+<div class="dock">
+  <div class="group"><button id="zoomIn" class="primary">＋ Zoom</button><button id="zoomOut">− Zoom</button><button id="reset">Reset</button></div>
+  <div class="sep"></div>
+  <div class="group"><button data-view="iso" class="viewBtn active">3/4</button><button data-view="top" class="viewBtn">Topo</button><button data-view="side" class="viewBtn">Lateral</button></div>
+  <div class="sep"></div>
+  <div class="group"><button id="autoRotate">Rotação</button><button id="toggleInfo">Bowl</button></div>
+</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

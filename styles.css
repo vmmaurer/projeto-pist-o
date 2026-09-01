@@ -1,0 +1,23 @@
+
+:root{--bg:#0b0f14;--panel:#121821;--panel2:#18212c;--line:#2a3644;--text:#f4f7fb;--muted:#aab4c0;--accent:#65d6c4;--accent2:#7aa7ff}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;width:100%;height:100%;background:var(--bg);color:var(--text);font-family:Segoe UI,Roboto,Arial,sans-serif;overflow:hidden}
+body{touch-action:none}
+.app{height:100%;display:flex;flex-direction:column}
+header{height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(11,15,20,.98);z-index:5}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}.mark{width:9px;height:36px;border-radius:6px;background:var(--accent)}
+h1{font-size:18px;line-height:1.15;margin:0;font-weight:700}.sub{font-size:12px;color:var(--muted);margin-top:4px}
+.mode{display:flex;gap:5px;background:var(--panel);padding:4px;border:1px solid var(--line);border-radius:12px}.mode button{min-width:88px}
+button{appearance:none;border:1px solid transparent;background:var(--panel2);color:var(--text);padding:10px 13px;border-radius:9px;font-size:14px;font-weight:650;min-height:42px;cursor:pointer}
+button.active{background:#20332f;border-color:#3d746b;color:#bff6ee}button:active{transform:scale(.98)}
+main{position:relative;flex:1;min-height:0}.stage{position:absolute;inset:0;display:none}.stage.active{display:flex}.single{flex-direction:column}
+.viewerWrap{position:relative;flex:1;min-width:0;min-height:0;background:radial-gradient(circle at 50% 34%,#202b37 0,#141c25 42%,#0b0f14 80%)}
+canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}canvas.dragging{cursor:grabbing}
+.overlay{position:absolute;left:18px;top:16px;max-width:380px;pointer-events:none}.tag{display:inline-block;padding:7px 10px;border:1px solid var(--line);background:rgba(18,24,33,.9);border-radius:999px;font-size:12px;color:var(--muted);margin-bottom:8px}.overlay h2{margin:0;font-size:27px}.overlay p{margin:7px 0 0;color:var(--muted);font-size:14px;line-height:1.45}
+.hint{position:absolute;right:18px;top:16px;padding:9px 11px;border:1px solid var(--line);background:rgba(18,24,33,.86);border-radius:10px;color:var(--muted);font-size:12px;pointer-events:none}
+.status{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:14px 16px;border:1px solid var(--line);background:rgba(18,24,33,.96);border-radius:10px;font-size:13px;color:var(--muted);z-index:3;min-width:210px;text-align:center}.status.hidden{display:none}.status.error{color:#ffb4b4;border-color:#6e3535}
+.info{position:absolute;left:18px;bottom:18px;background:rgba(18,24,33,.94);border:1px solid var(--line);border-radius:11px;padding:12px 13px;width:min(350px,calc(100vw - 36px));z-index:4;display:none;box-shadow:0 12px 30px rgba(0,0,0,.25)}.info.show{display:block}.info h3{font-size:14px;margin:0 0 8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{border:1px solid #26313e;border-radius:9px;padding:9px}.metric span{display:block;color:var(--muted);font-size:11px}.metric b{display:block;margin-top:2px;font-size:14px}
+.compare{gap:1px;background:var(--line)}.pane{position:relative;flex:1;min-width:0;background:#0b0f14}.pane .viewerWrap{position:absolute;inset:0}.pane .label{position:absolute;left:14px;bottom:14px;padding:8px 10px;border:1px solid var(--line);background:rgba(18,24,33,.9);border-radius:9px;font-size:12px;z-index:2}.pane .label b{display:block;font-size:15px;margin-bottom:2px}.pane .label span{color:var(--muted)}
+.dock{height:84px;display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 12px;border-top:1px solid var(--line);background:#0b0f14;z-index:6;flex-wrap:wrap}.group{display:flex;gap:6px}.sep{width:1px;height:34px;background:var(--line);margin:0 3px}.dock button{min-width:52px}.primary{border-color:#355f58}
+@media (orientation:portrait){header{height:80px}.sub{display:none}.brand h1{font-size:16px}.mode button{min-width:72px;font-size:12px;padding:9px}.dock{height:126px}.hint{top:auto;bottom:18px;right:18px}.overlay{max-width:280px}.overlay h2{font-size:23px}}
+@media (max-width:900px){.mode button{min-width:auto}.hint{display:none}.dock button{font-size:13px;padding:10px 11px}}
